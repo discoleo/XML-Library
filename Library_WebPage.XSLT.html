@@ -1,0 +1,74 @@
+<html>
+
+<meta charset="UTF-8">
+
+
+<script>
+	var sPath = "file://C:/Leo%20Mada/.../XML/Library/";
+	// var sPath = "file:///"; // "http://localhost/";
+	var sXml = sPath + "Library.xml";
+	var sTr  = sPath + "Library.Transform.xsl";
+	
+	var processor = new XSLTProcessor();
+	var myXMLHTTPRequest = new XMLHttpRequest();
+	var myDOM;
+	var xmlDoc;
+	var testTransform;
+	var fileError = "xml";
+	
+	function onloadXML() {
+		xmlDoc = myXMLHTTPRequest.responseXML;
+		
+		// load xslt file
+		fileError = "xslt";
+		myXMLHTTPRequest.removeEventListener('load', onloadXML);
+		myXMLHTTPRequest.open("GET", sTr, true);
+		myXMLHTTPRequest.addEventListener('load', onloadXSLT);
+		myXMLHTTPRequest.send(null);
+	}
+	function onloadXSLT() {
+		testTransform = myXMLHTTPRequest.responseXML;
+		// console.log(testTransform);
+		processor.importStylesheet(testTransform);
+		
+		try {
+			var fragment = processor.transformToFragment(xmlDoc, document);
+			document.getElementById("example").innerHTML = "";
+		
+			myDOM = fragment;
+			document.getElementById("example").appendChild(fragment);
+		} catch(e) {
+			console.log(e.type + "\n" + e);
+		}
+	}
+	function ajaxSuccess () {
+		console.log("Load! Load! Load!");
+	}
+	function ajaxError (e) {
+		document.getElementById("example").innerHTML =
+			"<h2>Security Error!</h2>" +
+			"<p>Could <b>NOT</b> load " + fileError + " file!</p>" +
+			"<p>On Firefox:<br/>" +
+			"Config Page: about:config<br/>" +
+			"Set 'privacy.file_unique_origin' to FALSE." +
+			"</p><p>" + e.type + " " + e + "</p>";
+	}
+	
+	
+	var xmlDoc = document.implementation.createDocument("", "xml", null);
+	myXMLHTTPRequest.onload = ajaxSuccess;
+	myXMLHTTPRequest.addEventListener('error', ajaxError);
+
+	myXMLHTTPRequest.open("GET", sXml, true);
+	myXMLHTTPRequest.addEventListener('load', onloadXML);
+	myXMLHTTPRequest.send(null);
+</script>
+
+<body>
+
+<div id="example">
+	ERROR!
+</div>
+
+</body>
+</html>

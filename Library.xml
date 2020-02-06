@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BibManagement
+	xmlns:xsi="file:///C:/Leo%20Mada/%20_TODO_%20/Library.Schema.xsd"
+	xmlns:a="file:///C:/Leo%20Mada/%20_TODO_%20/Authors.Schema.xsd"
+	xmlns:p="file:///C:/Leo%20Mada/%20_TODO_%20/Publishers.Schema.xsd"
+
+	xsi:schemaLocation="file:///C:/Leo%20Mada/%20_TODO_%20/Library.Schema.xsd" >
+
+<Creator>
+	<Name>Team Calin, Larisa, Leo</Name>
+	<Note>XML Project</Note>
+	<src repo="Github" src="https://github.com/discoleo/XML-Library/" />
+	<v>1.0</v>
+	<Date>
+		<Year>2020</Year>
+		<Month>01</Month>
+		<Day>28</Day>
+	</Date>
+</Creator>
+
+
+<!-- Authors: ALL Details -->
+<a:Authors>
+	<a:Author idAuthor="1">
+		<Name>Garfunkel</Name>
+		<GivenName>Loop And</GivenName>
+	</a:Author>
+	<a:Author idAuthor="2">
+		<Name>C</Name>
+		<GivenName>A B</GivenName>
+	</a:Author>
+	<a:Author idAuthor="3">
+		<Name>Dreistein</Name>
+		<GivenName>MC3</GivenName>
+	</a:Author>
+	<a:Author idAuthor="4">
+		<Name>Longus</Name>
+		<GivenName>Stringus</GivenName>
+	</a:Author>
+</a:Authors>
+
+
+<!-- List of Domains -->
+<Domains>
+	<Domain idDomain="1">
+		<Name>Science - IT - Loop Theory</Name>
+	</Domain>
+	<Domain idDomain="2">
+		<Name>Science - Astrophysics &amp; Gastronomy</Name>
+	</Domain>
+	<Domain idDomain="3">
+		<Name>Science - Theory of Scientific Writing</Name>
+	</Domain>
+</Domains>
+
+
+<!-- List of Publishers -->
+<p:Publishers>
+	<p:Publisher idPub="1">
+		<Name>Top Informatics Press</Name>
+	</p:Publisher>
+	<p:Publisher idPub="2">
+		<Name>Interplanetary Press</Name>
+	</p:Publisher>
+</p:Publishers>
+
+
+<!-- List of Books -->
+<Books>
+	<Book idBook="1">
+		<Title>Loop me to the end of Love</Title>
+		<Authors>
+			<Author idAuthorRef="1"><Hint>Loop To Loop</Hint></Author>
+		</Authors>
+		<Date>
+			<Year>2019</Year>
+			<Month>10</Month>
+			<Day>14</Day>
+		</Date>
+		<Domain idDomainRef="1" />
+		<Ratings>
+			<Rating type="Stars">4</Rating>
+			<Comment>The use of Loops has been discouraged.</Comment>
+		</Ratings>
+		<Published>
+			<Publisher idPubRef="1" />
+			<LocationID EIdType="doi" v="1">00.0000/t.info.2019.10.001</LocationID>
+		</Published>
+	</Book>
+	
+	<Book idBook="2">
+		<Title>The Design of Powerful Bibliographic Systems</Title>
+		<Authors>
+			<Author idAuthorRef="1"><Hint>Loop To Loop</Hint></Author>
+			<Author idAuthorRef="2"><Hint>A B C</Hint></Author>
+			<Author idAuthorRef="3"><Hint>MC3</Hint></Author>
+		</Authors>
+		<Date>
+			<Year>2019</Year>
+			<Month>10</Month>
+			<Day>14</Day>
+		</Date>
+		<Domain idDomainRef="1" />
+		<Ratings>
+			<Rating type="Stars">5</Rating>
+			<Comment>An Essential in Academic Libraries.</Comment>
+		</Ratings>
+		<Published>
+			<Publisher idPubRef="2" />
+			<LocationID EIdType="doi" v="1">00.0000/t.info.2019.10.002</LocationID>
+		</Published>
+	</Book>
+	
+	<Book idBook="3">
+		<Title>New Developments in Science</Title>
+		<Authors>
+			<Author idAuthorRef="3"><Hint>MC3</Hint></Author>
+		</Authors>
+		<Date>
+			<Year>2019</Year>
+			<Month>10</Month>
+			<Day>14</Day>
+		</Date>
+		<Domain idDomainRef="2" />
+		<Ratings>
+			<Rating type="Stars">5*</Rating>
+			<Comment>Shook the foundations of Science.</Comment>
+		</Ratings>
+		<Published>
+			<Publisher idPubRef="2" />
+			<LocationID EIdType="doi" v="1">00.0000/t.info.2019.11.003</LocationID>
+		</Published>
+	</Book>
+	
+	<Book idBook="4">
+		<Title>The Fundamentals of Letter Theory</Title>
+		<Authors>
+			<Author idAuthorRef="2"><Hint>ABC</Hint></Author>
+			<Author idAuthorRef="4"><Hint>Stringus</Hint></Author>
+		</Authors>
+		<Date>
+			<Year>2019</Year>
+			<Month>12</Month>
+			<Day>01</Day>
+		</Date>
+		<Domain idDomainRef="3" />
+		<Ratings>
+			<Rating type="Stars">5</Rating>
+			<Comment>Comprehensive.</Comment>
+		</Ratings>
+		<Published>
+			<Publisher idPubRef="2" />
+			<LocationID EIdType="doi" v="1">00.0000/t.info.2019.11.003</LocationID>
+		</Published>
+	</Book>
+</Books>
+
+</BibManagement>
